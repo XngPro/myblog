@@ -1,0 +1,34 @@
+anguage: node_js
+node_js: stable 
+branches:
+  only:
+  - master 
+
+before_install:
+- export TZ='Asia/Shanghai'
+- npm install -g hexo
+- npm install -g hexo-cli
+- npm install -g hexo-deployer-git
+- npm install --save-dev hexo-util
+- npm install -g yuque-hexo
+
+install:
+- npm install
+
+script:
+- yuque-hexo clean
+- yuque-hexo sync
+- hexo clean && hexo g -d
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "xngpro"
+  - git config user.email "xngpro@outlook.com"
+  - git add .
+  - git commit -m "Deploy..."
+  - git push --force --quiet "https://${travis_token}@${GH_REF}" master:master
+
+env:
+ global:
+   - GH_REF: github.com/XngPro/XngPro.github.io.git
