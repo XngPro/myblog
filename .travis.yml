@@ -27,7 +27,7 @@ after_script:
   - git config user.name "xngpro"
   - git config user.email "xngpro@outlook.com"
   - git add .
-  - git commit -m "Deploy..."
+  - git commit -m "Update Blog..."
   - git push --force --quiet "https://${travis_token}@${GH_REF}" master:master
 
 env:
