@@ -10,7 +10,7 @@
     "login": "xlab",
     "repo": "blog",
     "mdNameFormat": "slug",
-    "postPath": "source/_posts/yuque"
+    "postPath": "source/_posts/y"
   },
   "scripts": {
     "clean": "hexo clean",
