@@ -8,7 +8,7 @@ subtitle:
 description:
 keywords:
 author: Xing
-language:
+language: zh-Hans
 timezone:
 
 # URL
@@ -78,6 +78,15 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
